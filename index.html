@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>브레빌 870 중고 판매글 작성기</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#fff; --text:#17191c; --muted:#6b7280;
+    --line:#e5e7eb; --accent:#ff6f0f; --accent2:#fff4ec; --good:#15803d;
+    --shadow:0 10px 30px rgba(0,0,0,.06);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif}
+  .wrap{max-width:980px;margin:0 auto;padding:22px 14px 70px}
+  .hero{background:linear-gradient(135deg,#202226,#45484e);color:white;border-radius:24px;padding:26px;box-shadow:var(--shadow)}
+  .hero .eyebrow{font-size:13px;opacity:.75;margin-bottom:6px}
+  .hero h1{font-size:28px;line-height:1.25;margin:0 0 10px}
+  .hero p{margin:0;color:#e5e7eb;line-height:1.6}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow)}
+  .card h2{font-size:18px;margin:0 0 14px}
+  .field{margin-bottom:12px}
+  label{display:block;font-weight:700;font-size:13px;margin-bottom:7px}
+  input,select,textarea{width:100%;border:1px solid #d8dce2;border-radius:12px;padding:12px 13px;font-size:15px;background:white;color:var(--text);outline:none}
+  input:focus,select:focus,textarea:focus{border-color:#ff9a57;box-shadow:0 0 0 3px rgba(255,111,15,.10)}
+  textarea{min-height:88px;resize:vertical;line-height:1.55}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .photo-tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+  .btn{border:0;border-radius:12px;padding:11px 14px;font-weight:800;font-size:14px;cursor:pointer}
+  .btn.primary{background:var(--accent);color:white}
+  .btn.secondary{background:#f2f3f5;color:#333}
+  .btn.ghost{background:white;border:1px solid var(--line);color:#333}
+  .photos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .photo{position:relative;aspect-ratio:1/1;border-radius:14px;overflow:hidden;background:#f0f1f3;border:1px solid var(--line)}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .photo button{position:absolute;right:6px;top:6px;width:28px;height:28px;border:0;border-radius:50%;background:rgba(0,0,0,.62);color:white;font-size:16px}
+  .preview{margin-top:14px}
+  .market{background:#fff;border-radius:22px;border:1px solid var(--line);overflow:hidden;box-shadow:var(--shadow)}
+  .market .cover{aspect-ratio:16/9;background:#eceff2;display:flex;align-items:center;justify-content:center;color:#8b9199;font-weight:800}
+  .market .cover img{width:100%;height:100%;object-fit:cover}
+  .market .content{padding:20px}
+  .title{font-size:23px;font-weight:900;line-height:1.35}
+  .price{font-size:21px;font-weight:900;margin:9px 0 16px}
+  .meta{font-size:13px;color:var(--muted);margin-bottom:16px}
+  .bodytext{white-space:pre-wrap;line-height:1.75;font-size:15px}
+  .tagline{margin-top:18px;padding:13px 14px;border-radius:14px;background:var(--accent2);color:#b74800;font-weight:800;font-size:14px}
+  .copybar{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .note{font-size:12px;color:var(--muted);line-height:1.55;margin-top:8px}
+  .check{display:flex;align-items:center;gap:8px;margin:8px 0;font-size:14px}
+  .check input{width:auto}
+  .full{grid-column:1/-1}
+  @media(max-width:760px){
+    .grid{grid-template-columns:1fr}
+    .row{grid-template-columns:1fr}
+    .photos{grid-template-columns:repeat(2,1fr)}
+    .hero h1{font-size:24px}
+  }
+  @media print{
+    body{background:white}
+    .hero,.editor,.copybar,.note{display:none!important}
+    .wrap{max-width:none;padding:0}
+    .market{border:0;box-shadow:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <div class="eyebrow">당근마켓 중고 판매글 작성용</div>
+    <h1>브레빌 Barista Express 870 판매글</h1>
+    <p>정보와 사진을 입력하면 아래 미리보기에 자동 반영됩니다. 완성 후 판매글 문구를 그대로 복사해 당근마켓에 붙여넣을 수 있습니다.</p>
+  </section>
+
+  <section class="grid editor">
+    <div class="card">
+      <h2>1. 기본 정보</h2>
+      <div class="field"><label>판매 제목</label><input id="title" value="브레빌 870 바리스타 익스프레스 판매합니다"></div>
+      <div class="row">
+        <div class="field"><label>판매 가격</label><input id="price" value="450,000"></div>
+        <div class="field"><label>거래 지역</label><input id="location" value="직거래 희망"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label>구매 시기</label><input id="purchase" placeholder="예: 2023년 5월"></div>
+        <div class="field"><label>사용 기간</label><input id="usage" placeholder="예: 약 2년"></div>
+      </div>
+      <div class="field"><label>판매 이유</label><input id="reason" placeholder="예: 상위 기종으로 교체하여 판매"></div>
+    </div>
+
+    <div class="card">
+      <h2>2. 제품 상태</h2>
+      <div class="row">
+        <div class="field">
+          <label>전체 상태</label>
+          <select id="condition">
+            <option>상태 좋음</option><option>사용감 있음</option><option>매우 깨끗함</option><option>생활기스 있음</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>정상 작동 여부</label>
+          <select id="working">
+            <option>모든 기능 정상 작동</option><option>작동은 정상이나 사용감 있음</option><option>일부 점검 필요</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><label>외관 / 하자 설명</label><textarea id="flaws" placeholder="예: 스테인리스 특성상 잔기스는 있으나 큰 찍힘은 없습니다."></textarea></div>
+      <div class="field"><label>관리 상태</label><textarea id="maintenance" placeholder="예: 사용 후 스팀완드 닦고 백플러싱하며 관리했습니다."></textarea></div>
+    </div>
+
+    <div class="card">
+      <h2>3. 구성품</h2>
+      <div class="field"><label>포함 구성품</label><textarea id="items">브레빌 870 본체
+포터필터
+싱글 / 더블 바스켓
+우유 스팀피처
+템퍼
+청소도구</textarea></div>
+      <div class="check"><input id="box" type="checkbox"><label for="box" style="margin:0">정품 박스 있음</label></div>
+      <div class="check"><input id="manual" type="checkbox"><label for="manual" style="margin:0">설명서 있음</label></div>
+      <div class="check"><input id="extra" type="checkbox"><label for="extra" style="margin:0">추가 액세서리 있음</label></div>
+    </div>
+
+    <div class="card">
+      <h2>4. 거래 조건</h2>
+      <div class="field"><label>거래 방식</label><input id="deal" value="부피와 무게가 있어 직거래 우선으로 진행합니다."></div>
+      <div class="field"><label>네고 여부</label>
+        <select id="nego"><option>과도한 네고는 어렵습니다.</option><option>약간의 네고 가능합니다.</option><option>가격 제안 받지 않습니다.</option></select>
+      </div>
+      <div class="field"><label>추가 안내</label><textarea id="notice" placeholder="예: 직접 상태 확인 후 가져가시는 것을 추천드립니다."></textarea></div>
+    </div>
+
+    <div class="card full">
+      <h2>5. 사진 첨부</h2>
+      <div class="photo-tools">
+        <label class="btn primary" for="photosInput">사진 여러 장 추가</label>
+        <button class="btn secondary" type="button" onclick="clearPhotos()">전체 삭제</button>
+        <input id="photosInput" type="file" accept="image/*" multiple hidden>
+      </div>
+      <div id="photos" class="photos"></div>
+      <div class="note">첫 번째 사진이 대표 이미지로 표시됩니다. 브레빌 전면, 그룹헤드, 스팀완드, 물통, 그라인더, 구성품, 생활기스 순으로 찍으면 판매글 신뢰도가 높습니다.</div>
+    </div>
+  </section>
+
+  <section class="preview">
+    <div class="market">
+      <div class="cover" id="cover">대표 사진을 추가해주세요</div>
+      <div class="content">
+        <div class="title" id="pvTitle"></div>
+        <div class="price" id="pvPrice"></div>
+        <div class="meta" id="pvMeta"></div>
+        <div class="bodytext" id="pvBody"></div>
+        <div class="tagline">☕ 브레빌 870 입문용 반자동 머신 찾으시는 분께 추천드립니다.</div>
+        <div class="copybar">
+          <button class="btn primary" onclick="copyPost()">판매글 전체 복사</button>
+          <button class="btn ghost" onclick="window.print()">A4 출력 / PDF 저장</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+const ids=['title','price','location','purchase','usage','reason','condition','working','flaws','maintenance','items','deal','nego','notice','box','manual','extra'];
+ids.forEach(id=>document.getElementById(id).addEventListener('input',render));
+['box','manual','extra'].forEach(id=>document.getElementById(id).addEventListener('change',render));
+
+let photoData=[];
+document.getElementById('photosInput').addEventListener('change', async e=>{
+  const files=[...e.target.files];
+  for(const file of files){
+    const data=await fileToDataURL(file);
+    photoData.push(data);
+  }
+  drawPhotos(); render();
+  e.target.value='';
+});
+function fileToDataURL(file){
+  return new Promise(resolve=>{
+    const r=new FileReader(); r.onload=()=>resolve(r.result); r.readAsDataURL(file);
+  });
+}
+function drawPhotos(){
+  const box=document.getElementById('photos');
+  box.innerHTML='';
+  photoData.forEach((src,i)=>{
+    const d=document.createElement('div'); d.className='photo';
+    d.innerHTML=`<img src="${src}" alt="사진 ${i+1}"><button type="button" aria-label="삭제" onclick="removePhoto(${i})">×</button>`;
+    box.appendChild(d);
+  });
+}
+function removePhoto(i){ photoData.splice(i,1); drawPhotos(); render(); }
+function clearPhotos(){ photoData=[]; drawPhotos(); render(); }
+
+function val(id){return document.getElementById(id).value.trim()}
+function checked(id){return document.getElementById(id).checked}
+
+function buildText(){
+  const lines=[];
+  lines.push(`브레빌 870 바리스타 익스프레스 판매합니다.`);
+  lines.push('');
+  if(val('purchase')) lines.push(`- 구매 시기: ${val('purchase')}`);
+  if(val('usage')) lines.push(`- 사용 기간: ${val('usage')}`);
+  lines.push(`- 제품 상태: ${val('condition')}`);
+  lines.push(`- 작동 상태: ${val('working')}`);
+  if(val('reason')) lines.push(`- 판매 이유: ${val('reason')}`);
+  lines.push('');
+  if(val('flaws')) { lines.push('【외관 / 상태】'); lines.push(val('flaws')); lines.push(''); }
+  if(val('maintenance')) { lines.push('【관리 상태】'); lines.push(val('maintenance')); lines.push(''); }
+  lines.push('【구성품】');
+  lines.push(val('items'));
+  if(checked('box')) lines.push('- 정품 박스 포함');
+  if(checked('manual')) lines.push('- 설명서 포함');
+  if(checked('extra')) lines.push('- 추가 액세서리 포함');
+  lines.push('');
+  lines.push('【거래 안내】');
+  lines.push(val('deal'));
+  lines.push(val('nego'));
+  if(val('notice')) lines.push(val('notice'));
+  lines.push('');
+  lines.push('중고 제품 특성상 사진과 설명을 충분히 확인 후 거래 부탁드립니다.');
+  return lines.join('\n');
+}
+function render(){
+  document.getElementById('pvTitle').textContent=val('title') || '브레빌 870 판매합니다';
+  document.getElementById('pvPrice').textContent=(val('price')||'0')+'원';
+  document.getElementById('pvMeta').textContent=(val('location')||'거래지역 입력')+' · 브레빌 870';
+  document.getElementById('pvBody').textContent=buildText();
+
+  const cover=document.getElementById('cover');
+  if(photoData[0]) cover.innerHTML=`<img src="${photoData[0]}" alt="대표 이미지">`;
+  else cover.textContent='대표 사진을 추가해주세요';
+}
+async function copyPost(){
+  const text = `${val('title')}\n${val('price')}원\n\n${buildText()}`;
+  try{
+    await navigator.clipboard.writeText(text);
+    alert('판매글이 복사되었습니다.');
+  }catch(e){
+    const ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy'); ta.remove(); alert('판매글이 복사되었습니다.');
+  }
+}
+render();
+</script>
+</body>
+</html>
