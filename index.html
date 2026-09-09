@@ -1,247 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>브레빌 870 중고 판매글 작성기</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>아들과 라이온즈파크 야구 관람 리뷰 index</title>
 <style>
-  :root{
-    --bg:#f6f7f9; --card:#fff; --text:#17191c; --muted:#6b7280;
-    --line:#e5e7eb; --accent:#ff6f0f; --accent2:#fff4ec; --good:#15803d;
-    --shadow:0 10px 30px rgba(0,0,0,.06);
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--text);
-    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif}
-  .wrap{max-width:980px;margin:0 auto;padding:22px 14px 70px}
-  .hero{background:linear-gradient(135deg,#202226,#45484e);color:white;border-radius:24px;padding:26px;box-shadow:var(--shadow)}
-  .hero .eyebrow{font-size:13px;opacity:.75;margin-bottom:6px}
-  .hero h1{font-size:28px;line-height:1.25;margin:0 0 10px}
-  .hero p{margin:0;color:#e5e7eb;line-height:1.6}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow)}
-  .card h2{font-size:18px;margin:0 0 14px}
-  .field{margin-bottom:12px}
-  label{display:block;font-weight:700;font-size:13px;margin-bottom:7px}
-  input,select,textarea{width:100%;border:1px solid #d8dce2;border-radius:12px;padding:12px 13px;font-size:15px;background:white;color:var(--text);outline:none}
-  input:focus,select:focus,textarea:focus{border-color:#ff9a57;box-shadow:0 0 0 3px rgba(255,111,15,.10)}
-  textarea{min-height:88px;resize:vertical;line-height:1.55}
-  .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .photo-tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
-  .btn{border:0;border-radius:12px;padding:11px 14px;font-weight:800;font-size:14px;cursor:pointer}
-  .btn.primary{background:var(--accent);color:white}
-  .btn.secondary{background:#f2f3f5;color:#333}
-  .btn.ghost{background:white;border:1px solid var(--line);color:#333}
-  .photos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-  .photo{position:relative;aspect-ratio:1/1;border-radius:14px;overflow:hidden;background:#f0f1f3;border:1px solid var(--line)}
-  .photo img{width:100%;height:100%;object-fit:cover;display:block}
-  .photo button{position:absolute;right:6px;top:6px;width:28px;height:28px;border:0;border-radius:50%;background:rgba(0,0,0,.62);color:white;font-size:16px}
-  .preview{margin-top:14px}
-  .market{background:#fff;border-radius:22px;border:1px solid var(--line);overflow:hidden;box-shadow:var(--shadow)}
-  .market .cover{aspect-ratio:16/9;background:#eceff2;display:flex;align-items:center;justify-content:center;color:#8b9199;font-weight:800}
-  .market .cover img{width:100%;height:100%;object-fit:cover}
-  .market .content{padding:20px}
-  .title{font-size:23px;font-weight:900;line-height:1.35}
-  .price{font-size:21px;font-weight:900;margin:9px 0 16px}
-  .meta{font-size:13px;color:var(--muted);margin-bottom:16px}
-  .bodytext{white-space:pre-wrap;line-height:1.75;font-size:15px}
-  .tagline{margin-top:18px;padding:13px 14px;border-radius:14px;background:var(--accent2);color:#b74800;font-weight:800;font-size:14px}
-  .copybar{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-  .note{font-size:12px;color:var(--muted);line-height:1.55;margin-top:8px}
-  .check{display:flex;align-items:center;gap:8px;margin:8px 0;font-size:14px}
-  .check input{width:auto}
-  .full{grid-column:1/-1}
-  @media(max-width:760px){
-    .grid{grid-template-columns:1fr}
-    .row{grid-template-columns:1fr}
-    .photos{grid-template-columns:repeat(2,1fr)}
-    .hero h1{font-size:24px}
-  }
-  @media print{
-    body{background:white}
-    .hero,.editor,.copybar,.note{display:none!important}
-    .wrap{max-width:none;padding:0}
-    .market{border:0;box-shadow:none}
-  }
-</style>
-</head>
-<body>
-<div class="wrap">
-  <section class="hero">
-    <div class="eyebrow">당근마켓 중고 판매글 작성용</div>
-    <h1>브레빌 Barista Express 870 판매글</h1>
-    <p>정보와 사진을 입력하면 아래 미리보기에 자동 반영됩니다. 완성 후 판매글 문구를 그대로 복사해 당근마켓에 붙여넣을 수 있습니다.</p>
-  </section>
-
-  <section class="grid editor">
-    <div class="card">
-      <h2>1. 기본 정보</h2>
-      <div class="field"><label>판매 제목</label><input id="title" value="브레빌 870 바리스타 익스프레스 판매합니다"></div>
-      <div class="row">
-        <div class="field"><label>판매 가격</label><input id="price" value="450,000"></div>
-        <div class="field"><label>거래 지역</label><input id="location" value="직거래 희망"></div>
-      </div>
-      <div class="row">
-        <div class="field"><label>구매 시기</label><input id="purchase" placeholder="예: 2023년 5월"></div>
-        <div class="field"><label>사용 기간</label><input id="usage" placeholder="예: 약 2년"></div>
-      </div>
-      <div class="field"><label>판매 이유</label><input id="reason" placeholder="예: 상위 기종으로 교체하여 판매"></div>
-    </div>
-
-    <div class="card">
-      <h2>2. 제품 상태</h2>
-      <div class="row">
-        <div class="field">
-          <label>전체 상태</label>
-          <select id="condition">
-            <option>상태 좋음</option><option>사용감 있음</option><option>매우 깨끗함</option><option>생활기스 있음</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>정상 작동 여부</label>
-          <select id="working">
-            <option>모든 기능 정상 작동</option><option>작동은 정상이나 사용감 있음</option><option>일부 점검 필요</option>
-          </select>
-        </div>
-      </div>
-      <div class="field"><label>외관 / 하자 설명</label><textarea id="flaws" placeholder="예: 스테인리스 특성상 잔기스는 있으나 큰 찍힘은 없습니다."></textarea></div>
-      <div class="field"><label>관리 상태</label><textarea id="maintenance" placeholder="예: 사용 후 스팀완드 닦고 백플러싱하며 관리했습니다."></textarea></div>
-    </div>
-
-    <div class="card">
-      <h2>3. 구성품</h2>
-      <div class="field"><label>포함 구성품</label><textarea id="items">브레빌 870 본체
-포터필터
-싱글 / 더블 바스켓
-우유 스팀피처
-템퍼
-청소도구</textarea></div>
-      <div class="check"><input id="box" type="checkbox"><label for="box" style="margin:0">정품 박스 있음</label></div>
-      <div class="check"><input id="manual" type="checkbox"><label for="manual" style="margin:0">설명서 있음</label></div>
-      <div class="check"><input id="extra" type="checkbox"><label for="extra" style="margin:0">추가 액세서리 있음</label></div>
-    </div>
-
-    <div class="card">
-      <h2>4. 거래 조건</h2>
-      <div class="field"><label>거래 방식</label><input id="deal" value="부피와 무게가 있어 직거래 우선으로 진행합니다."></div>
-      <div class="field"><label>네고 여부</label>
-        <select id="nego"><option>과도한 네고는 어렵습니다.</option><option>약간의 네고 가능합니다.</option><option>가격 제안 받지 않습니다.</option></select>
-      </div>
-      <div class="field"><label>추가 안내</label><textarea id="notice" placeholder="예: 직접 상태 확인 후 가져가시는 것을 추천드립니다."></textarea></div>
-    </div>
-
-    <div class="card full">
-      <h2>5. 사진 첨부</h2>
-      <div class="photo-tools">
-        <label class="btn primary" for="photosInput">사진 여러 장 추가</label>
-        <button class="btn secondary" type="button" onclick="clearPhotos()">전체 삭제</button>
-        <input id="photosInput" type="file" accept="image/*" multiple hidden>
-      </div>
-      <div id="photos" class="photos"></div>
-      <div class="note">첫 번째 사진이 대표 이미지로 표시됩니다. 브레빌 전면, 그룹헤드, 스팀완드, 물통, 그라인더, 구성품, 생활기스 순으로 찍으면 판매글 신뢰도가 높습니다.</div>
-    </div>
-  </section>
-
-  <section class="preview">
-    <div class="market">
-      <div class="cover" id="cover">대표 사진을 추가해주세요</div>
-      <div class="content">
-        <div class="title" id="pvTitle"></div>
-        <div class="price" id="pvPrice"></div>
-        <div class="meta" id="pvMeta"></div>
-        <div class="bodytext" id="pvBody"></div>
-        <div class="tagline">☕ 브레빌 870 입문용 반자동 머신 찾으시는 분께 추천드립니다.</div>
-        <div class="copybar">
-          <button class="btn primary" onclick="copyPost()">판매글 전체 복사</button>
-          <button class="btn ghost" onclick="window.print()">A4 출력 / PDF 저장</button>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<script>
-const ids=['title','price','location','purchase','usage','reason','condition','working','flaws','maintenance','items','deal','nego','notice','box','manual','extra'];
-ids.forEach(id=>document.getElementById(id).addEventListener('input',render));
-['box','manual','extra'].forEach(id=>document.getElementById(id).addEventListener('change',render));
-
-let photoData=[];
-document.getElementById('photosInput').addEventListener('change', async e=>{
-  const files=[...e.target.files];
-  for(const file of files){
-    const data=await fileToDataURL(file);
-    photoData.push(data);
-  }
-  drawPhotos(); render();
-  e.target.value='';
-});
-function fileToDataURL(file){
-  return new Promise(resolve=>{
-    const r=new FileReader(); r.onload=()=>resolve(r.result); r.readAsDataURL(file);
-  });
-}
-function drawPhotos(){
-  const box=document.getElementById('photos');
-  box.innerHTML='';
-  photoData.forEach((src,i)=>{
-    const d=document.createElement('div'); d.className='photo';
-    d.innerHTML=`<img src="${src}" alt="사진 ${i+1}"><button type="button" aria-label="삭제" onclick="removePhoto(${i})">×</button>`;
-    box.appendChild(d);
-  });
-}
-function removePhoto(i){ photoData.splice(i,1); drawPhotos(); render(); }
-function clearPhotos(){ photoData=[]; drawPhotos(); render(); }
-
-function val(id){return document.getElementById(id).value.trim()}
-function checked(id){return document.getElementById(id).checked}
-
-function buildText(){
-  const lines=[];
-  lines.push(`브레빌 870 바리스타 익스프레스 판매합니다.`);
-  lines.push('');
-  if(val('purchase')) lines.push(`- 구매 시기: ${val('purchase')}`);
-  if(val('usage')) lines.push(`- 사용 기간: ${val('usage')}`);
-  lines.push(`- 제품 상태: ${val('condition')}`);
-  lines.push(`- 작동 상태: ${val('working')}`);
-  if(val('reason')) lines.push(`- 판매 이유: ${val('reason')}`);
-  lines.push('');
-  if(val('flaws')) { lines.push('【외관 / 상태】'); lines.push(val('flaws')); lines.push(''); }
-  if(val('maintenance')) { lines.push('【관리 상태】'); lines.push(val('maintenance')); lines.push(''); }
-  lines.push('【구성품】');
-  lines.push(val('items'));
-  if(checked('box')) lines.push('- 정품 박스 포함');
-  if(checked('manual')) lines.push('- 설명서 포함');
-  if(checked('extra')) lines.push('- 추가 액세서리 포함');
-  lines.push('');
-  lines.push('【거래 안내】');
-  lines.push(val('deal'));
-  lines.push(val('nego'));
-  if(val('notice')) lines.push(val('notice'));
-  lines.push('');
-  lines.push('중고 제품 특성상 사진과 설명을 충분히 확인 후 거래 부탁드립니다.');
-  return lines.join('\n');
-}
-function render(){
-  document.getElementById('pvTitle').textContent=val('title') || '브레빌 870 판매합니다';
-  document.getElementById('pvPrice').textContent=(val('price')||'0')+'원';
-  document.getElementById('pvMeta').textContent=(val('location')||'거래지역 입력')+' · 브레빌 870';
-  document.getElementById('pvBody').textContent=buildText();
-
-  const cover=document.getElementById('cover');
-  if(photoData[0]) cover.innerHTML=`<img src="${photoData[0]}" alt="대표 이미지">`;
-  else cover.textContent='대표 사진을 추가해주세요';
-}
-async function copyPost(){
-  const text = `${val('title')}\n${val('price')}원\n\n${buildText()}`;
-  try{
-    await navigator.clipboard.writeText(text);
-    alert('판매글이 복사되었습니다.');
-  }catch(e){
-    const ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta);
-    ta.select(); document.execCommand('copy'); ta.remove(); alert('판매글이 복사되었습니다.');
-  }
-}
-render();
-</script>
-</body>
-</html>
+:root{--bg:#f5f6f7;--card:#fff;--text:#1f2328;--muted:#6b7280;--line:#e5e7eb;--blue:#2563eb;--dark:#111827;--orange:#ea580c;--red:#dc2626}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif}.wrap{max-width:980px;margin:auto;padding:14px}.hero{background:linear-gradient(135deg,#0b4a8b,#1f6bb8);color:#fff;border-radius:22px;padding:24px 20px}.hero small{font-weight:800;opacity:.85}.hero h1{margin:8px 0 10px;font-size:27px}.hero p{margin:0;line-height:1.6}.note{margin-top:12px;background:rgba(255,255,255,.14);padding:10px 12px;border-radius:12px;font-size:13px}.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.toolbar button,.actions button,.addbtn{border:0;border-radius:10px;padding:10px 12px;font-weight:800;cursor:pointer}.primary{background:var(--blue);color:#fff}.dark{background:var(--dark);color:#fff}.ghost{background:#fff;border:1px solid var(--line)}.orange{background:var(--orange);color:#fff}.danger{background:var(--red);color:#fff}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;margin:14px 0}.card h2{margin:0 0 14px;font-size:19px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.full{grid-column:1/-1}.field label{display:block;font-size:13px;font-weight:800;margin-bottom:6px}input,textarea{width:100%;border:1px solid #d9dde3;border-radius:10px;padding:11px 12px;font:inherit;background:#fff}textarea{min-height:92px;resize:vertical}.voice{background:#fff8e8;border:1px solid #f4d79a;border-radius:10px;padding:9px 10px;margin-bottom:7px;font-size:12px;line-height:1.5;color:#71531b}.small{font-size:12px;color:var(--muted);line-height:1.5}.status{font-size:12px;font-weight:800;min-height:18px;color:#6b4f27}.progress{height:10px;background:#e5e7eb;border-radius:999px;overflow:hidden}.progress>div{height:100%;background:#2563eb;width:0}.media-list{display:flex;flex-direction:column;gap:12px}.item{border:1px solid var(--line);border-radius:15px;padding:12px}.item.dragging{opacity:.45}.item-head{display:flex;gap:8px;align-items:center;margin-bottom:10px}.drag{cursor:grab;font-size:20px}.title{font-weight:900;flex:1}.badge{font-size:11px;padding:4px 8px;border-radius:999px;background:#eef2ff}.media-box{display:grid;grid-template-columns:220px 1fr;gap:12px}.preview-box{min-height:160px;border:1px dashed #cbd5e1;border-radius:12px;display:flex;align-items:center;justify-content:center;background:#f8fafc;overflow:hidden}.preview-box img,.preview-box video{max-width:100%;max-height:260px}.actions{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0}.actions button{font-size:12px;padding:8px 10px}.inline-add{text-align:center;margin-top:8px}.inline-add button{background:#eef2ff;color:#334155;border:1px dashed #a5b4fc}.draft{min-height:420px}.preview-text{white-space:pre-wrap;background:#fafafa;border:1px solid var(--line);border-radius:12px;padding:14px;min-height:120px;line-height:1.7}@media(max-width:720px){.grid{grid-template-columns:1fr}.full{grid-column:auto}.media-box{grid-template-columns:1fr}.hero h1{font-size:23px}}
+</style></head><body><main class="wrap">
+<header class="hero"><small>FATHER & SON BASEBALL DAY REVIEW</small><h1>아들과 라이온즈파크 야구 관람 리뷰</h1><p>출발부터 야구장 분위기, 좌석, 먹거리, 응원, 아들의 반응, 경기 하이라이트까지 사진과 영상으로 기록하는 현장용 index입니다.</p><div class="note">📸 사진 + 🎥 영상 첨부 · 항목 드래그 순서 변경 · 자동저장 · 미디어 포함/제외 HTML 내보내기</div></header>
+<div class="toolbar"><button class="primary" id="recordBtn">✨ 기록형 초안</button><button class="dark" id="blogBtn">N 자연스러운 관람 후기</button><button class="ghost" id="copyBtn">📋 글 복사</button><button class="ghost" id="saveBtn">💾 저장</button><button class="orange" id="exportBtn">📦 사진·영상 포함 HTML</button><button class="ghost" id="exportNoMediaBtn">📄 미디어 제외 HTML</button><button class="danger" id="resetBtn">전체 초기화</button></div><div class="status" id="status"></div>
+<section class="card"><h2>1. 관람 기본정보</h2><div class="grid">
+<div class="field"><label>관람 장소</label><input id="place" value="대구 삼성 라이온즈 파크"></div><div class="field"><label>관람일</label><input id="date" type="date"></div><div class="field"><label>관람자</label><input id="with" value="아빠 + 아들"></div><div class="field"><label>좌석</label><input id="seat" placeholder="예: 3루 내야 지정석 / 블루존"></div><div class="field"><label>경기</label><input id="game" placeholder="예: 삼성 라이온즈 vs ○○"></div><div class="field"><label>경기 결과</label><input id="result" placeholder="예: 삼성 5 : 3 승"></div><div class="field full"><label>오늘 관람 포인트</label><div class="voice"><b>말하기 참고:</b> 아들과 처음 가는지, 어떤 장면을 기대하는지, 응원·먹거리·선수 관람 중 무엇이 핵심인지 말해보세요.</div><textarea id="purpose"></textarea></div></div></section>
+<section class="card"><h2>2. 현장 메모</h2><div class="grid">
+<div class="field"><label>주차 / 이동</label><textarea id="parking" placeholder="주차 위치, 진입·출차, 아이와 이동 편의"></textarea></div><div class="field"><label>입장 / 티켓</label><textarea id="entry" placeholder="입장 동선, 모바일 티켓, 게이트, 대기시간"></textarea></div><div class="field"><label>좌석 / 시야</label><textarea id="view" placeholder="그라운드 시야, 아이 기준 시야, 통로·화장실 접근성"></textarea></div><div class="field"><label>먹거리</label><textarea id="food" placeholder="메뉴, 가격, 맛, 아이 반응, 대기시간"></textarea></div><div class="field"><label>아들의 반응</label><div class="voice"><b>말하기 참고:</b> 입장했을 때 표정, 응원가, 전광판, 마스코트, 간식, 득점 장면 반응을 구체적으로 남겨보세요.</div><textarea id="child"></textarea></div><div class="field"><label>응원 / 경기 분위기</label><textarea id="cheer"></textarea></div><div class="field"><label>좋았던 점</label><textarea id="good"></textarea></div><div class="field"><label>아쉬웠던 점</label><textarea id="bad"></textarea></div><div class="field full"><label>다시 간다면</label><textarea id="again" placeholder="추천 좌석, 도착시간, 준비물, 먹거리 팁"></textarea></div></div></section>
+<section class="card"><h2>3. 사진 + 영상 촬영 index</h2><div class="small">각 항목에서 사진 또는 영상을 촬영하거나 보관함에서 선택할 수 있습니다. 항목을 드래그해서 순서도 바꿀 수 있습니다.</div><div style="margin:12px 0"><div class="progress"><div id="fill"></div></div><div class="small" style="margin-top:6px">미디어 첨부 진행: <b id="progressText">0/0</b></div></div><div class="media-list" id="mediaList"></div><div class="inline-add"><button class="addbtn" id="addEndBtn">＋ 맨 아래 촬영 항목 추가</button></div></section>
+<section class="card"><h2>4. 블로그용 글 초안</h2><textarea id="draft" class="draft" placeholder="위 버튼에서 초안을 생성하세요."></textarea><h3>미리보기</h3><div id="previewText" class="preview-text"></div></section>
+</main><script>
+const $=id=>document.getElementById(id),STORE='lionspark_father_son_review_v1';let dragId=null;
+const defaults=[['출발 전','응원도구·모자·유니폼, 아들의 기대감'],['라이온즈파크 외관','야구장 첫 모습과 간판·상징물'],['입장 전 인증샷','아들과 야구장 앞 기념사진'],['티켓 / 입장 게이트','모바일 티켓과 입장 과정'],['야구장 내부 첫 풍경','그라운드를 처음 본 순간'],['우리 좌석','좌석 번호와 실제 시야'],['아들의 첫 반응','경기장을 본 표정과 반응'],['경기 전 워밍업','선수 몸풀기와 그라운드 분위기'],['먹거리 구입','매장·메뉴판·줄서는 모습'],['야구장 먹거리','실제 먹는 장면과 아들 반응'],['경기 시작','첫 투구·전광판·경기 시작 분위기'],['응원 장면','응원가·박수·응원봉 영상 추천'],['아들이 응원하는 모습','노래·박수·춤 영상 추천'],['경기 하이라이트','안타·득점·홈런·수비 장면'],['전광판 / 이벤트','이닝 이벤트와 관중 이벤트'],['야구장 야경','해진 뒤 조명과 분위기'],['경기 종료 / 스코어','최종 점수와 전광판'],['관람 후 아들과 한 컷','오늘 하루를 마무리하는 기념사진']];
+let data={fields:{},items:defaults.map(x=>({id:crypto.randomUUID(),title:x[0],guide:x[1],memo:'',type:'',media:''}))};
+function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}function status(t){$('status').textContent=t;setTimeout(()=>$('status').textContent='',2500)}
+function fields(){let o={};['place','date','with','seat','game','result','purpose','parking','entry','view','food','child','cheer','good','bad','again'].forEach(id=>o[id]=$(id)?.value||'');return o}
+function save(){data.fields=fields();try{localStorage.setItem(STORE,JSON.stringify(data));status('저장했습니다.')}catch(e){status('사진·영상 용량이 커 자동저장 한도를 넘을 수 있습니다. HTML 내보내기를 사용하세요.')}}
+function load(){try{let s=localStorage.getItem(STORE);if(s)data=JSON.parse(s);Object.entries(data.fields||{}).forEach(([k,v])=>{if($(k))$(k).value=v})}catch(e){}if(!$('date').value)$('date').value=new Date().toISOString().slice(0,10);render()}
+function progress(){let done=data.items.filter(x=>x.media).length,total=data.items.length;$('progressText').textContent=`${done}/${total}`;$('fill').style.width=(total?done/total*100:0)+'%'}
+function add(after=null){let n={id:crypto.randomUUID(),title:'추가 촬영 항목',guide:'직접 촬영 목적을 적어보세요.',memo:'',type:'',media:''};if(after){let i=data.items.findIndex(x=>x.id===after);data.items.splice(i+1,0,n)}else data.items.push(n);render();save()}
+function render(){let root=$('mediaList');root.innerHTML='';data.items.forEach((it,idx)=>{let w=document.createElement('div');w.className='item';w.draggable=true;w.dataset.id=it.id;w.ondragstart=()=>{dragId=it.id;w.classList.add('dragging')};w.ondragend=()=>w.classList.remove('dragging');w.ondragover=e=>e.preventDefault();w.ondrop=e=>{e.preventDefault();if(!dragId||dragId===it.id)return;let f=data.items.findIndex(x=>x.id===dragId),t=data.items.findIndex(x=>x.id===it.id),m=data.items.splice(f,1)[0];data.items.splice(t,0,m);render();save()};let pv=it.media?(it.type.startsWith('video')?`<video src="${it.media}" controls playsinline></video>`:`<img src="${it.media}">`):'<span class="small">사진 또는 영상을 추가하세요.</span>';w.innerHTML=`<div class="item-head"><span class="drag">☰</span><input class="title" data-role="title" value="${esc(it.title)}"><span class="badge">${idx+1}</span></div><div class="media-box"><div class="preview-box">${pv}</div><div><div class="voice"><b>촬영·말하기 참고:</b> ${esc(it.guide)}</div><div class="actions"><button class="primary" data-act="photo">📷 사진 촬영</button><button class="dark" data-act="video">🎥 영상 촬영</button><button class="ghost" data-act="gallery">🖼️ 보관함</button><button class="ghost" data-act="clear">미디어 삭제</button><button class="danger" data-act="delete">항목 삭제</button></div><textarea data-role="memo" placeholder="이 사진·영상의 상황과 아들의 반응을 메모하세요.">${esc(it.memo)}</textarea><div class="inline-add"><button data-act="add">＋ 이 항목 아래에 추가</button></div><input type="file" accept="image/*" capture="environment" data-input="photo" hidden><input type="file" accept="video/*" capture="environment" data-input="video" hidden><input type="file" accept="image/*,video/*" data-input="gallery" hidden></div></div>`;root.appendChild(w);w.querySelector('[data-role=title]').oninput=e=>{it.title=e.target.value;save()};w.querySelector('[data-role=memo]').oninput=e=>{it.memo=e.target.value;save()};w.querySelector('[data-act=photo]').onclick=()=>w.querySelector('[data-input=photo]').click();w.querySelector('[data-act=video]').onclick=()=>w.querySelector('[data-input=video]').click();w.querySelector('[data-act=gallery]').onclick=()=>w.querySelector('[data-input=gallery]').click();w.querySelector('[data-act=clear]').onclick=()=>{it.media='';it.type='';render();save()};w.querySelector('[data-act=delete]').onclick=()=>{data.items=data.items.filter(x=>x.id!==it.id);render();save()};w.querySelector('[data-act=add]').onclick=()=>add(it.id);w.querySelectorAll('input[type=file]').forEach(inp=>inp.onchange=e=>{let f=e.target.files?.[0];if(!f)return;let r=new FileReader();r.onload=()=>{it.media=r.result;it.type=f.type||'';render();save()};r.readAsDataURL(f)})});progress()}
+function memos(){return data.items.filter(x=>x.memo.trim()).map((x,i)=>`- ${i+1}. ${x.title}: ${x.memo.trim()}`).join('\n')}function setDraft(t){$('draft').value=t;$('previewText').textContent=t;save()}
+$('recordBtn').onclick=()=>{let d=fields();setDraft(`[아들과 라이온즈파크 야구 관람 기록]\n\n관람일: ${d.date||'-'}\n장소: ${d.place||'-'}\n관람자: ${d.with||'-'}\n경기: ${d.game||'-'}\n좌석: ${d.seat||'-'}\n결과: ${d.result||'-'}\n\n[오늘 관람 포인트]\n${d.purpose||'-'}\n\n[주차·이동]\n${d.parking||'-'}\n\n[입장·티켓]\n${d.entry||'-'}\n\n[좌석·시야]\n${d.view||'-'}\n\n[먹거리]\n${d.food||'-'}\n\n[아들의 반응]\n${d.child||'-'}\n\n[응원·경기 분위기]\n${d.cheer||'-'}\n\n[좋았던 점]\n${d.good||'-'}\n\n[아쉬웠던 점]\n${d.bad||'-'}\n\n[다시 간다면]\n${d.again||'-'}\n\n[사진·영상별 메모]\n${memos()||'메모 없음'}`)};
+$('blogBtn').onclick=()=>{let d=fields();setDraft(`오늘은 아들과 함께 ${d.place||'대구 삼성 라이온즈 파크'}에 야구를 보러 다녀왔습니다. ${d.purpose||'야구 경기도 보고 함께 응원하며 특별한 시간을 보내는 것이 오늘의 가장 큰 목적이었습니다.'}\n\n경기는 ${d.game||'삼성 라이온즈 경기'}였고, 좌석은 ${d.seat||'현장에서 선택한 좌석'}이었습니다. 이동과 주차는 ${d.parking||'아이와 함께 움직이는 만큼 조금 여유 있게 도착하는 것이 좋았습니다.'}\n\n입장 과정은 ${d.entry||'티켓과 입장 게이트를 확인한 뒤 들어갔습니다.'} 실제 좌석 시야는 ${d.view||'직접 경기장을 바라보니 TV로 볼 때와는 다른 현장감이 느껴졌습니다.'}\n\n무엇보다 기억에 남는 건 아들의 반응이었습니다. ${d.child||'큰 야구장과 응원 소리, 전광판을 신기해했고 함께 박수치며 응원하는 모습이 인상적이었습니다.'}\n\n야구장 먹거리는 ${d.food||'경기 관람의 또 다른 재미였습니다.'} 응원과 경기 분위기는 ${d.cheer||'관중이 함께 응원가를 부르는 순간마다 야구장 특유의 에너지가 느껴졌습니다.'}\n\n오늘 좋았던 점은 ${d.good||'아들과 같은 장면을 보고 함께 웃고 응원할 수 있었다는 점'}입니다. ${d.bad?`아쉬웠던 점은 ${d.bad}였습니다.`:''}\n\n다시 방문한다면 ${d.again||'좌석 위치와 이동 동선을 조금 더 미리 확인하고 아이가 좋아할 간식과 응원도구도 챙겨오고 싶습니다.'}\n\n경기 결과는 ${d.result||'오늘의 추억과 함께 기록해두었습니다.'} 승패도 중요하지만 오늘은 아들과 함께 보낸 야구장 하루 자체가 오래 기억에 남을 것 같습니다.`)};
+$('copyBtn').onclick=async()=>{await navigator.clipboard.writeText($('draft').value);status('글을 복사했습니다.')};$('saveBtn').onclick=save;$('addEndBtn').onclick=()=>add();$('draft').oninput=()=>{$('previewText').textContent=$('draft').value;save()};document.querySelectorAll('input,textarea').forEach(el=>{if(el.id!=='draft')el.addEventListener('change',save)});
+function exportHTML(includeMedia){save();let c=JSON.parse(JSON.stringify(data));if(!includeMedia)c.items.forEach(x=>{x.media='';x.type=''});let payload=JSON.stringify(c).replace(/</g,'\\u003c'),doc=document.documentElement.outerHTML.replace(/let data=\{fields:\{\},items:defaults\.map\(x=>\(\{id:crypto\.randomUUID\(\),title:x\[0\],guide:x\[1\],memo:'',type:'',media:''\}\)\)\};/,`let data=${payload};`).replace("const $=id=>document.getElementById(id),STORE='lionspark_father_son_review_v1';",`const $=id=>document.getElementById(id),STORE='lionspark_father_son_review_export_${Date.now()}';`);let b=new Blob(['<!DOCTYPE html>\n'+doc],{type:'text/html'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=includeMedia?'라이온즈파크_아들과_야구관람_사진영상포함.html':'라이온즈파크_아들과_야구관람_미디어제외.html';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+$('exportBtn').onclick=()=>exportHTML(true);$('exportNoMediaBtn').onclick=()=>exportHTML(false);$('resetBtn').onclick=()=>{if(confirm('모든 입력 내용과 사진·영상을 초기화할까요?')){localStorage.removeItem(STORE);location.reload()}};load();
+</script></body></html>
